@@ -8,6 +8,11 @@ interface IBackupItem {
   item: TBackup
 }
 
+const emits = defineEmits<{
+  removeBackup: [backup: TBackup]
+  restoreBackup: [backup: TBackup]
+}>()
+
 const { item } = defineProps<IBackupItem>()
 </script>
 
@@ -23,10 +28,16 @@ const { item } = defineProps<IBackupItem>()
     <p class="text-center">{{ item.size_mb }} Mb</p>
     <p class="text-center">{{ new Date(+item.date).toLocaleString() }}</p>
     <span class="w-12 h-12">
-      <RestoreIcon class="cursor-pointer" />
+      <RestoreIcon
+        class="cursor-pointer hover:fill-lime-500"
+        @click.stop="emits('restoreBackup', item)"
+      />
     </span>
     <span class="w-12 h-12">
-      <RemoveIcon class="cursor-pointer" />
+      <RemoveIcon
+        class="cursor-pointer hover:fill-red-500"
+        @click.stop="emits('removeBackup', item)"
+      />
     </span>
   </div>
 </template>

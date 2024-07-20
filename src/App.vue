@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import LayoutHeader from '@/layout/LayoutHeader.vue'
+import LayoutSidebar from '@/layout/LayoutSidebar.vue'
 </script>
 
 <template>
   <div class="layout grid">
     <header class="header bg-slate-100 border-b-[0.1rem] p-4">
-      <div>Header</div>
+      <LayoutHeader />
     </header>
     <aside class="aside bg-slate-100 border-r-[0.1rem] p-4">
-      <nav>
-        <RouterLink to="/">Login</RouterLink>
-        <RouterLink to="/backups">Backups</RouterLink>
-      </nav>
+      <LayoutSidebar />
     </aside>
     <div class="view bg-slate-100 p-4 lg:px-20">
       <RouterView />

@@ -13,7 +13,7 @@ const appStore = useStore()
 
 const chosenBackup = ref<TBackup | null>(null)
 
-const { backups, modalOpened } = storeToRefs(appStore)
+const { backups, modalOpened, currentUser } = storeToRefs(appStore)
 
 const getBackups = async () => {
   const $loading = useLoading({
@@ -22,7 +22,9 @@ const getBackups = async () => {
     lockScroll: true
   }).show()
 
-  await appStore.getInitialBackups()
+  if (currentUser.value) {
+    await appStore.getInitialBackups(currentUser.value)
+  }
 
   $loading.hide()
 }

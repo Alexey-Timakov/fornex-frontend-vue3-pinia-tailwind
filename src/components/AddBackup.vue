@@ -23,9 +23,11 @@ const addNewBackup = async () => {
     lockScroll: true
   }).show()
 
+  const newId = backups.value.length ? +backups.value[backups.value.length - 1].id + 1 : 0
+
   const newBackup: TBackup = {
     date: Date.now().toString(),
-    id: (+backups.value[backups.value.length - 1].id + 1).toString(),
+    id: newId.toString(),
     size_mb: Math.floor(Math.random() * 300).toString(),
     title: selected.value?.name || 'unknown'
   }

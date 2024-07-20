@@ -1,6 +1,5 @@
 {
   "name": "fornex-vue3-pinia-tailwind",
-  "homepage": "https://alexey-timakov.github.io/fornex-frontend-vue3-pinia-tailwind/",
   "version": "0.0.0",
   "private": true,
   "type": "module",

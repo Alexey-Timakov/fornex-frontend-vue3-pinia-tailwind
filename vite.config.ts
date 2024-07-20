@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'fornex-frontend-vue3-pinia-tailwind/',
+  base: '/fornex-frontend-vue3-pinia-tailwind/',
   plugins: [
     vue(),
     vueJsx(),

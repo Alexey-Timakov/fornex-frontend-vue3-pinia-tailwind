@@ -14,7 +14,7 @@ const pageTitle = ref(routes.filter((r) => r.path === route.fullPath)[0].name)
 
 watch(
   () => route.fullPath,
-  (newPath, oldPath) => {
+  (newPath) => {
     pageTitle.value = routes.filter((r) => r.path === newPath)[0].name
   }
 )

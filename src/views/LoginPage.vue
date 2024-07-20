@@ -58,7 +58,7 @@ const logout = async () => {
       </button>
     </form>
 
-    <div v-else class="mt-4 flex flex-col w-[50rem] text-2xl py-20 px-40 mt-40 shadow-md">
+    <div v-else class="flex flex-col w-[50rem] text-2xl py-20 px-40 mt-40 shadow-md">
       <h3 class="text-3xl mb-4">Wow! Not so fast, cowboy!</h3>
       <p>You are currently have an active session</p>
       <button class="text-3xl bg-red-500 px-8 py-2 mt-8 text-white" @click="logout">

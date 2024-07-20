@@ -59,10 +59,19 @@ router.beforeEach((to, from, next) => {
     console.warn("Previous session found for user:", user);
 
     if (appStore.currentUser === null) {
+      console.log("Set user:", user)
       appStore.setUser(user);
     }
 
-    next();
+    if (from.path === "/" && to.path === "/") {
+      console.log("Initial loading, redirect to BackupsPage");
+      next("/backups")
+    }
+
+    else {
+      next();
+    }
+
   }
 
   else {
